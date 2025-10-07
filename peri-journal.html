@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Peri-Journal Landing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        background: #fafafa;
+        font-family: "Roboto", Arial, sans-serif;
+        color: #444;
+      }
+      .header {
+        width: 100%;
+        height: 120px;
+        background: url("images/clouds-header.jpg") center top no-repeat;
+        background-size: cover;
+        margin-bottom: 0;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #fff;
+        /* box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04); */
+        /* border-radius: 16px; */
+        padding-top: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+        /* top: -40px; */
+      }
+      .column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 80px 24px;
+      }
+      .column.left {
+        align-items: flex-start;
+      }
+      .column.center {
+        background: #f5f5f5;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.03);
+        padding: 80px 24px;
+        min-width: 260px;
+        max-width: 320px;
+        align-items: stretch;
+        margin: 0 16px;
+      }
+      .column.right {
+        align-items: flex-end;
+      }
+      h1 {
+        font-family: "Roboto", arial;
+        font-size: 1.8rem;
+        font-weight: 300;
+        text-align: center;
+        margin: 0 0 8px 0;
+        letter-spacing: 1px;
+        color: #444;
+      }
+      .subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+        color: #7a6c5d;
+        margin-bottom: 32px;
+      }
+      .section-title {
+        font-size: 1.05rem;
+        color: #a67c52;
+        font-weight: 300;
+        margin-bottom: 50px;
+        letter-spacing: 0.5px;
+        font-family: "Montserrat", Arial, sans-serif;
+      }
+      .column.left p,
+      .column.right p {
+        font-size: 0.98rem;
+        color: #888;
+        margin-bottom: 24px;
+        line-height: 1.6;
+        max-width: 220px;
+      }
+      .flower-img {
+        width: 140px;
+        height: auto;
+        margin-top: 16px;
+        margin-bottom: 8px;
+      }
+      .waitlist-form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 8px;
+        margin-top: 30px;
+      }
+      .waitlist-form label {
+        font-size: 0.95rem;
+        color: #a67c52;
+        margin-bottom: 4px;
+        font-weight: 500;
+      }
+      .waitlist-form input {
+        padding: 10px 12px;
+        border: 1px solid #e0d6ce;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-family: "Montserrat", Arial, sans-serif;
+        background: #fff;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      .waitlist-form input:focus {
+        border-color: #a67c52;
+      }
+      .subscribe-btn {
+        background: #c89b8a;
+        color: #fff;
+        font-size: 1.08rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 30px;
+        padding: 12px 0;
+        cursor: pointer;
+        margin-top: 8px;
+        transition: background 0.2s;
+      }
+      .subscribe-btn:hover {
+        background: #a67c52;
+      }
+      .form-note {
+        font-size: 0.92rem;
+        color: #a67c52;
+        text-align: center;
+        margin-top: 8px;
+      }
+      .founder-img {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        background: #eee;
+      }
+      .founder-name {
+        font-size: 1.08rem;
+        font-weight: 600;
+        color: #444;
+        margin-bottom: 2px;
+      }
+      .founder-title {
+        font-size: 0.97rem;
+        color: #a67c52;
+        margin-bottom: 12px;
+      }
+      .social-icons {
+        display: flex;
+        gap: 16px;
+        margin-top: 12px;
+      }
+      .social-icons a {
+        color: #bbb;
+        font-size: 1.3rem;
+        transition: color 0.2s;
+      }
+      .social-icons a:hover {
+        color: #a67c52;
+      }
+      @media (max-width: 900px) {
+        .container {
+          flex-direction: column;
+          padding: 32px 8px;
+          top: 0;
+        }
+        .column {
+          padding: 0;
+          margin-bottom: 32px;
+          align-items: center !important;
+        }
+        .column.center {
+          margin: 0 auto 32px auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header"></div>
+    <h1>THE PERI-JOURNAL</h1>
+    <div class="subtitle">Find Balance. Cultivate Well-being</div>
+    <div class="container">
+      <div class="column left">
+        <div class="section-title">EMBRACE YOUR JOURNEY</div>
+        <p>
+          Lorem Ipsum: I'm sharing the women and inspiring and tips to join
+          content you to excite, with healing and balance you might benefit.
+        </p>
+        <img src="images/flower.jpg" alt="Lotus Flower" class="flower-img" />
+      </div>
+      <div class="column center">
+        <div class="section-title" style="text-align: center">
+          JOIN THE WAITLIST
+        </div>
+        <form class="waitlist-form">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="EMAIL ADDRESS"
+            required
+          />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="NAME (Optional)"
+          />
+          <button type="submit" class="subscribe-btn">SUBSCRIBE</button>
+        </form>
+        <div class="form-note">Receive updates and early access!</div>
+      </div>
+      <div class="column right">
+        <div class="section-title">MEET THE FOUNDER</div>
+        <img src="" alt="Founder" class="founder-img" />
+        <div class="founder-name">Dr. Sarah Chen, PhD</div>
+        <div class="founder-title">Researcher &amp; Medical Writer</div>
+        <p>
+          Lorem Ipsum: Here to support what you need and tips to thrive. This is
+          not medical advice but stories to uplift your health journey.
+        </p>
+        <div class="social-icons">
+          <a href="#" title="Twitter" aria-label="Twitter"
+            ><svg
+              width="22"
+              height="22"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M24 4.557a9.93 9.93 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.916 4.916 0 0 0-8.38 4.482C7.691 8.095 4.066 6.13 1.64 3.161c-.543.929-.855 2.01-.855 3.17 0 2.188 1.115 4.117 2.813 5.254a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.418A9.867 9.867 0 0 1 0 19.54a13.94 13.94 0 0 0 7.548 2.212c9.058 0 14.009-7.513 14.009-14.009 0-.213-.005-.425-.014-.636A10.025 10.025 0 0 0 24 4.557z"
+              /></svg
+          ></a>
+          <a href="#" title="LinkedIn" aria-label="LinkedIn"
+            ><svg
+              width="22"
+              height="22"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.868-3.063-1.868 0-2.156 1.459-2.156 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.841-1.563 3.039 0 3.601 2.001 3.601 4.601v5.595z"
+              /></svg
+          ></a>
+          <a href="#" title="Email" aria-label="Email"
+            ><svg
+              width="22"
+              height="22"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 13.065l-11.99-7.065v14h23.98v-14l-11.99 7.065zm11.99-9.065h-23.98l11.99 7.065 11.99-7.065z"
+              /></svg
+          ></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

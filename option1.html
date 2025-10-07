@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Peri-Journal | Navigate Your Change. Reclaim Your Power.</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use Inter font -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              "primary-dark": "#4A4E69", // Deep Purple/Grey
+              "primary-light": "#F8F9FA", // Off-White
+              "accent-rose": "#C9ADA7", // Soft Rose
+              "accent-mauve": "#9A8C98", // Mauve
+              "bg-soft": "#F7F7F7", // Very light gray background
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom styles for the top banner gradient and subtle pattern */
+      .header-bg {
+        background: linear-gradient(
+          135deg,
+          #f9dcc4 0%,
+          #d4afb9 50%,
+          #9c8aa6 100%
+        );
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      }
+      /* Style for the central container that holds the content */
+      .content-container {
+        border-radius: 1.5rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-bg-soft min-h-screen">
+    <!-- Header / Hero Section (Soft Gradient) -->
+    <header class="header-bg py-16 mb-8 lg:mb-12">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h1
+          class="text-5xl md:text-6xl font-extrabold text-primary-dark tracking-tight mb-2"
+        >
+          THE PERI-JOURNAL
+        </h1>
+        <p class="text-xl text-primary-dark/80 italic">
+          Navigate Your Change. Reclaim Your Power.
+        </p>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 pb-12">
+      <!-- Main Content Area: 3-Column Layout (stacked on mobile) -->
+      <div
+        class="content-container p-6 md:p-10 lg:p-16 grid grid-cols-1 lg:grid-cols-3 gap-12"
+      >
+        <!-- 1. Explanation & Value Proposition (Left Column) -->
+        <section class="lg:border-r lg:border-accent-rose/40 lg:pr-8">
+          <h2 class="text-3xl font-bold text-primary-dark mb-4 tracking-tight">
+            EMBRACE YOUR TRANSFORMATION
+          </h2>
+          <p class="text-primary-dark/70 leading-relaxed mb-6">
+            Perimenopause is a journey, not a destination. Our guided journals
+            offer a gentle, evidence-based approach to tracking symptoms, mood
+            shifts, and lifestyle data during this empowering but often
+            confusing stage of life.
+          </p>
+          <p class="text-primary-dark/70 leading-relaxed mb-8">
+            Discover personalized insights, learn powerful self-advocacy tools,
+            and join a community that truly understands what you're
+            experiencing.
+          </p>
+
+          <!-- Stylized Lotus Graphic (Inline SVG) -->
+          <div class="w-full max-w-xs mx-auto lg:mx-0 p-4">
+            <svg
+              viewBox="0 0 200 200"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-full h-auto"
+            >
+              <defs>
+                <linearGradient
+                  id="lotus-grad"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop
+                    offset="0%"
+                    style="stop-color: #c9ada7; stop-opacity: 1"
+                  />
+                  <stop
+                    offset="100%"
+                    style="stop-color: #9a8c98; stop-opacity: 1"
+                  />
+                </linearGradient>
+              </defs>
+              <!-- Center Bud -->
+              <circle cx="100" cy="100" r="15" fill="url(#lotus-grad)" />
+              <!-- Outermost Petals -->
+              <path
+                fill="none"
+                stroke="#9A8C98"
+                stroke-width="2"
+                d="M100 15 L120 70 L185 100 L120 130 L100 185 L80 130 L15 100 L80 70 Z"
+              />
+              <!-- Inner Petals -->
+              <path
+                fill="none"
+                stroke="#C9ADA7"
+                stroke-width="3"
+                d="M100 30 L110 80 L160 100 L110 120 L100 170 L90 120 L40 100 L90 80 Z"
+              />
+              <!-- Heartbeat Line -->
+              <polyline
+                fill="none"
+                stroke="#4A4E69"
+                stroke-width="2"
+                points="10 150, 50 150, 65 130, 80 150, 95 130, 110 150, 125 130, 140 150, 180 150"
+                transform="translate(0, 10)"
+              />
+            </svg>
+          </div>
+        </section>
+
+        <!-- 2. Waiting List Form (Center Column) -->
+        <section
+          class="bg-primary-light p-6 md:p-8 rounded-xl shadow-lg flex flex-col justify-center"
+        >
+          <h3 class="text-2xl font-semibold text-primary-dark mb-6 text-center">
+            JOIN THE WAITING LIST
+          </h3>
+
+          <form id="waitlistForm" onsubmit="handleFormSubmit(event)">
+            <div class="mb-4">
+              <label for="email" class="sr-only">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="EMAIL ADDRESS"
+                required
+                class="w-full p-3 border border-accent-mauve/50 rounded-lg focus:ring-2 focus:ring-accent-rose focus:border-accent-rose placeholder-accent-mauve/70 transition duration-150"
+              />
+            </div>
+            <div class="mb-6">
+              <label for="name" class="sr-only">Your Name (Optional)</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="YOUR NAME (Optional)"
+                class="w-full p-3 border border-accent-mauve/50 rounded-lg focus:ring-2 focus:ring-accent-rose focus:border-accent-rose placeholder-accent-mauve/70 transition duration-150"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="w-full py-3 px-6 rounded-lg font-bold text-white bg-primary-dark hover:bg-accent-mauve transition duration-300 shadow-md transform hover:scale-[1.01]"
+            >
+              GET UPDATES
+            </button>
+
+            <p
+              id="message"
+              class="text-sm text-center mt-4 text-accent-mauve/80"
+            >
+              Be the first to know when we launch!
+            </p>
+          </form>
+        </section>
+
+        <!-- 3. Author Info (Right Column) -->
+        <section
+          class="lg:border-l lg:border-accent-rose/40 lg:pl-8 flex flex-col items-center text-center lg:text-left"
+        >
+          <div class="mb-6 flex flex-col items-center">
+            <!-- Placeholder Author Image -->
+            <img
+              src="https://placehold.co/120x120/9A8C98/FFFFFF?text=Author"
+              alt="Portrait of Dr. Sarah Chen, PhD"
+              onerror="this.src='https://placehold.co/120x120/9A8C98/FFFFFF?text=Author'"
+              class="rounded-full w-32 h-32 object-cover ring-4 ring-accent-rose/50 mb-4"
+            />
+
+            <h3
+              class="text-lg font-semibold text-primary-dark uppercase tracking-wider"
+            >
+              ABOUT THE AUTHOR
+            </h3>
+            <p class="text-2xl font-bold text-primary-dark mt-1">
+              Dr. Sarah Chen, PhD
+            </p>
+            <p class="text-accent-mauve font-medium">
+              Researcher & Medical Writer
+            </p>
+          </div>
+
+          <p class="text-primary-dark/70 leading-relaxed mb-6">
+            Dr. Chen specializes in women's health and has dedicated her career
+            to bridging the gap between scientific understanding and accessible,
+            actionable health tools. Her work focuses on evidence-based
+            self-care during life transitions.
+          </p>
+
+          <!-- Social Icons -->
+          <div class="flex space-x-4">
+            <a
+              href="#"
+              class="text-accent-mauve hover:text-primary-dark transition duration-150"
+              aria-label="LinkedIn"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM4 9h4v12H4z"
+                />
+                <circle cx="6" cy="6" r="2" fill="currentColor" />
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="text-accent-mauve hover:text-primary-dark transition duration-150"
+              aria-label="Twitter/X"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M18.9 4a.89.89 0 00-.77.34 8.78 8.78 0 00-2.3 1.83 10.37 10.37 0 00-2.58 3.5c-.32 1.15-.35 2.53-.18 3.65.17 1.12.54 2.12 1.07 3.03.52.9 1.15 1.7 1.86 2.37.71.67 1.48 1.17 2.29 1.5.81.33 1.63.48 2.45.48h.02c.7 0 1.25-.56 1.25-1.25s-.55-1.25-1.25-1.25c-.37 0-.7-.05-1.01-.15-.46-.14-.88-.38-1.25-.72-.44-.39-.83-.88-1.15-1.46-.32-.58-.55-1.22-.68-1.92-.12-.7-.11-1.45.05-2.18.15-.72.41-1.39.77-2.02.36-.63.79-1.2 1.28-1.72.48-.52 1.01-.98 1.58-1.38.56-.4 1.17-.67 1.8-.81.63-.14 1.3-.11 1.96.1s1.3.49 1.84.99c.55.5 1.02 1.12 1.41 1.84.39.72.69 1.54.89 2.44.2 1.1.2 2.29.0 3.38-.2 1.09-.6 2.14-1.2 3.12-.6 1-1.32 1.84-2.14 2.52-.82.68-1.74 1.19-2.73 1.52-1.01.32-2.06.45-3.1.37-1.04-.08-2.06-.35-3.04-.79-.98-.44-1.88-1.07-2.67-1.87-.79-.8-1.44-1.73-1.93-2.78-.49-1.05-.79-2.2-.88-3.37-.1-1.17-.06-2.33.13-3.48.19-1.15.55-2.28 1.06-3.33.51-1.05 1.19-2.04 2.01-2.93 1.63-1.76 3.64-2.9 5.86-3.41 2.23-.5 4.5-.28 6.57.65.65.29 1.08 1.03.88 1.73z"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="text-accent-mauve hover:text-primary-dark transition duration-150"
+              aria-label="Instagram"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2c2.71 0 3.05.01 4.12.06 1.07.05 1.74.22 2.4.47.66.25 1.2.62 1.74 1.15.54.53.9 1.08 1.15 1.74.25.66.42 1.33.47 2.4.05 1.07.06 1.41.06 4.12s-.01 3.05-.06 4.12c-.05 1.07-.22 1.74-.47 2.4-.25.66-.62 1.2-1.15 1.74-.53.54-1.08.9-1.74 1.15-.66.25-1.33.42-2.4.47-1.07.05-1.41.06-4.12.06s-3.05-.01-4.12-.06c-1.07-.05-1.74-.22-2.4-.47-.66-.25-1.2-.62-1.74-1.15-.54-.53-.9-1.08-1.15-1.74-.25-.66-.42-1.33-.47-2.4-.05-1.07-.06-1.41-.06-4.12s.01-3.05.06-4.12c.05-1.07.22-1.74.47-2.4.25-.66.62-1.2 1.15-1.74.53-.54 1.08-.9 1.74-1.15.66-.25 1.33-.42 2.4-.47C8.95 2.01 9.29 2 12 2zm0 2.22c-2.67 0-3 .01-4.04.06-1.04.05-1.66.21-2.1.37-.44.16-.76.4-.99.63-.23.23-.47.55-.63.99-.16.44-.32 1.06-.37 2.1-.05 1.04-.06 1.37-.06 4.04s.01 3 .06 4.04c.05 1.04.21 1.66.37 2.1.16.44.4.76.63.99.23.23.55.47.99.63.44.16 1.06.32 2.1.37 1.04.05 1.37.06 4.04.06s3-.01 4.04-.06c1.04-.05 1.66-.21 2.1-.37.44-.16.76-.4.99-.63.23-.23.47-.55.63-.99.16-.44.32-1.06.37-2.1.05-1.04.06-1.37.06-4.04s-.01-3-.06-4.04c-.05-1.04-.21-1.66-.37-2.1-.16-.44-.4-.76-.63-.99-.23-.23-.55-.47-.99-.63-.44-.16-1.06-.32-2.1-.37-1.04-.05-1.37-.06-4.04-.06zm0 3.78a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm5.5-7.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
+                />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer / Placeholder -->
+    <footer class="text-center py-6 text-primary-dark/50 text-sm">
+      &copy; 2025 The Peri-Journal. All rights reserved.
+    </footer>
+
+    <!-- JavaScript for Form Submission -->
+    <script>
+      const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const messageElement = document.getElementById("message");
+        const submitButton = form.querySelector('button[type="submit"]');
+
+        // Simple client-side validation
+        const email = document.getElementById("email").value;
+        if (!email) {
+          messageElement.textContent = "Please enter a valid email address.";
+          messageElement.classList.remove("text-accent-mauve/80");
+          messageElement.classList.add("text-red-500");
+          return;
+        }
+
+        // Simulate form submission process
+        submitButton.textContent = "Submitting...";
+        submitButton.disabled = true;
+
+        // In a real application, you would send this data to your backend/mailing list API here.
+        await new Promise((resolve) => setTimeout(resolve, 1500)); // Simulate API delay
+
+        // Update UI on success
+        messageElement.textContent = "Thank you! You are now on the list.";
+        messageElement.classList.remove("text-red-500");
+        messageElement.classList.add("text-green-600", "font-semibold");
+
+        submitButton.textContent = "Subscribed!";
+        submitButton.classList.remove("bg-primary-dark");
+        submitButton.classList.add("bg-green-500");
+        form.reset();
+      };
+    </script>
+  </body>
+</html>

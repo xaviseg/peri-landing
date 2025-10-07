@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Peri-Journal - Find Balance. Cultivate Well-being</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #ffecd1 0%,
+          #fcb69f 25%,
+          #ffecd1 50%,
+          #a8caba 75%,
+          #d299c2 100%
+        );
+        min-height: 100vh;
+        padding: 40px 20px;
+      }
+
+      .main-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      }
+
+      .header-section {
+        background: url("images/clouds-header.jpg") center top/cover;
+        height: 200px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .header-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.75);
+      }
+
+      .header-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+      }
+
+      .main-title {
+        font-size: 2.5rem;
+        font-weight: 300;
+        color: #4a4a4a;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .tagline {
+        font-size: 1.1rem;
+        color: #666;
+        font-weight: 400;
+      }
+
+      .content-section {
+        padding: 50px 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+      }
+
+      .column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .column-title {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #8b7d6b;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 30px;
+      }
+
+      .flower-illustration {
+        width: 140px;
+        height: 140px;
+        background: url("images/flower.jpg") center/contain no-repeat;
+        margin-bottom: 25px;
+      }
+
+      .description-text {
+        font-size: 0.85rem;
+        line-height: 1.6;
+        color: #7a7a7a;
+        max-width: 200px;
+      }
+
+      /* Middle column - Form styling */
+      .form-column {
+        background: #f5f3f0;
+        padding: 35px 25px;
+        border-radius: 16px;
+        position: relative;
+        top: -20px;
+      }
+
+      .form-title {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #8b7d6b;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 25px;
+        text-align: center;
+      }
+
+      .email-label {
+        font-size: 0.75rem;
+        color: #999;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        background: #ffffff;
+        margin-bottom: 15px;
+        font-family: inherit;
+      }
+
+      .form-input:focus {
+        outline: none;
+        border-color: #c4a484;
+      }
+
+      .subscribe-button {
+        width: 100%;
+        padding: 14px;
+        background: #c4a484;
+        color: #ffffff;
+        border: none;
+        border-radius: 25px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        cursor: pointer;
+        margin-top: 10px;
+        font-family: inherit;
+        transition: background 0.3s ease;
+      }
+
+      .subscribe-button:hover {
+        background: #b8986f;
+      }
+
+      .form-note {
+        font-size: 0.75rem;
+        color: #999;
+        text-align: center;
+        margin-top: 12px;
+      }
+
+      /* Right column - Founder */
+      .founder-photo {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #e8e8e8;
+        margin-bottom: 15px;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="35" r="15" fill="%23999"/><path d="M20 80 Q20 60 50 60 Q80 60 80 80 Z" fill="%23999"/></svg>');
+        background-size: 60%;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .founder-name {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #4a4a4a;
+        margin-bottom: 4px;
+      }
+
+      .founder-title {
+        font-size: 0.8rem;
+        color: #c4a484;
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 15px;
+      }
+
+      .social-link {
+        width: 28px;
+        height: 28px;
+        background: #e0e0e0;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #999;
+        font-size: 0.8rem;
+        transition: background 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: #c4a484;
+        color: white;
+      }
+
+      @media (max-width: 768px) {
+        .content-section {
+          grid-template-columns: 1fr;
+          padding: 30px 20px;
+          gap: 30px;
+        }
+
+        .main-title {
+          font-size: 2rem;
+        }
+
+        .form-column {
+          top: 0;
+        }
+
+        body {
+          padding: 20px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Header with cloud background -->
+      <div class="header-section">
+        <div class="header-content">
+          <h1 class="main-title">The Peri-Journal</h1>
+          <p class="tagline">Find Balance. Cultivate Well-being</p>
+        </div>
+      </div>
+
+      <!-- Main content section -->
+      <div class="content-section">
+        <!-- Left Column - Embrace Your Journey -->
+        <div class="column">
+          <h2 class="column-title">Embrace Your Journey</h2>
+          <div class="flower-illustration"></div>
+          <p class="description-text">
+            Lorem ipsum the journey the women exploring the fact big triggered
+            twine despite with red climes ad bonus joules nights hones.
+          </p>
+        </div>
+
+        <!-- Middle Column - Join the Waitlist -->
+        <div class="column">
+          <div class="form-column">
+            <h2 class="form-title">Join the Waitlist</h2>
+
+            <form id="subscribeForm">
+              <label class="email-label">Email Address</label>
+              <input
+                type="email"
+                class="form-input"
+                placeholder="EMAIL ADDRESS"
+                required
+              />
+
+              <input
+                type="text"
+                class="form-input"
+                placeholder="NAME (Optional)"
+              />
+
+              <button type="submit" class="subscribe-button">Subscribe</button>
+
+              <p class="form-note">Receive updates and early access!</p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right Column - Meet the Founder -->
+        <div class="column">
+          <h2 class="column-title">Meet the Founder</h2>
+          <div class="founder-photo"></div>
+          <h3 class="founder-name">Dr. Sarah Chen, PhD</h3>
+          <p class="founder-title">Researcher & Medical Writer</p>
+          <p class="description-text">
+            Lorem ipsum there in then explore that as thinking ses the this
+            tries at read all achieved the across spilt your blue market basic.
+          </p>
+
+          <div class="social-links">
+            <a href="#" class="social-link">T</a>
+            <a href="#" class="social-link">in</a>
+            <a href="#" class="social-link">IG</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("subscribeForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const email = this.querySelector('input[type="email"]').value;
+
+          if (!email) {
+            alert("Please enter your email address");
+            return;
+          }
+
+          alert("Thank you for joining our waitlist!");
+          this.reset();
+        });
+    </script>
+  </body>
+</html>

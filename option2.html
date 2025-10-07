@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Peri-Journal | Nurture Your Body, Empower Your Mind</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Playfair Display for an elegant, serif look (as seen in the design) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Configure Tailwind with custom fonts and colors -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              // Playfair Display for titles and headers
+              serif: ["Playfair Display", "serif"],
+              // Inter for body text and form inputs
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              "panel-dark": "#574F5A", // Deep Muted Purple/Taupe
+              "panel-light": "#F7F4F0", // Creamy Off-White
+              "accent-rose": "#E9C8C7", // Soft Rose/Pink accent
+              "text-dark": "#2F2D35", // Dark text color
+              "text-light": "#F7F4F0", // Light text color (for dark panel)
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Base styling for the wrapper to center the entire design */
+      .wrapper {
+        background-color: #f0f0f0; /* Light background behind the panels */
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2.5rem 0; /* Vertical padding for breathing room */
+      }
+
+      /* Custom decorative patterns (moons/leaves) using relative positioning */
+      .dark-panel {
+        position: relative;
+        overflow: hidden; /* Ensures the corner decorations don't bleed out */
+      }
+
+      .light-panel {
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Generic crescent moon SVG style */
+      .crescent-moon {
+        position: absolute;
+        width: 100px; /* Size of the SVG decorative element */
+        height: 100px;
+        color: #e9c8c7;
+        opacity: 0.5;
+      }
+
+      /* Positioning the decorative elements for the dark panel */
+      .dark-panel .crescent-top-left {
+        top: -40px;
+        left: -40px;
+      }
+      .dark-panel .crescent-bottom-right {
+        bottom: -50px;
+        right: -50px;
+      }
+
+      /* Positioning the decorative elements for the light panel */
+      .light-panel .crescent-top-right {
+        top: -40px;
+        right: -40px;
+      }
+      .light-panel .crescent-bottom-left {
+        bottom: -50px;
+        left: -50px;
+      }
+
+      /* Hide specific elements on larger screens to keep the two-column look clean */
+      @media (min-width: 1024px) {
+        .dark-panel .crescent-bottom-right,
+        .light-panel .crescent-top-right {
+          opacity: 0.2; /* Subtle presence on desktop */
+        }
+      }
+    </style>
+  </head>
+
+  <body class="font-sans wrapper">
+    <!-- Main Container: Holds the two panels side-by-side on desktop, stacked on mobile -->
+    <div
+      class="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl lg:grid lg:grid-cols-2 w-full max-w-5xl"
+    >
+      <!-- ========================================================================= -->
+      <!-- LEFT PANEL: Title, Description, and Tree Graphic (Dark Background) -->
+      <!-- ========================================================================= -->
+      <div
+        class="dark-panel bg-panel-dark text-text-light p-8 md:p-12 lg:p-16 flex flex-col items-center justify-center"
+      >
+        <!-- Decorative Moons/Pattern (Top Left) -->
+        <svg
+          class="crescent-moon crescent-top-left"
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M96 20C96 48.7 73.7 72 46 72C18.3 72 -4 48.7 -4 20C-4 -8.7 18.3 -32 46 -32C73.7 -32 96 -8.7 96 20Z"
+            fill="currentColor"
+          />
+          <path
+            d="M50 4C27.9 4 10 21.9 10 44C10 66.1 27.9 84 50 84C72.1 84 90 66.1 90 44C90 21.9 72.1 4 50 4Z"
+            fill="white"
+            fill-opacity="0.1"
+          />
+        </svg>
+
+        <!-- Decorative Moons/Pattern (Bottom Right - Subtle) -->
+        <svg
+          class="crescent-moon crescent-bottom-right transform rotate-180"
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M96 20C96 48.7 73.7 72 46 72C18.3 72 -4 48.7 -4 20C-4 -8.7 18.3 -32 46 -32C73.7 -32 96 -8.7 96 20Z"
+            fill="currentColor"
+          />
+          <path
+            d="M50 4C27.9 4 10 21.9 10 44C10 66.1 27.9 84 50 84C72.1 84 90 66.1 90 44C90 21.9 72.1 4 50 4Z"
+            fill="white"
+            fill-opacity="0.1"
+          />
+        </svg>
+
+        <header class="text-center mb-10 z-10">
+          <p class="font-serif italic text-lg opacity-80 mb-2 tracking-widest">
+            THE
+          </p>
+          <h1
+            class="font-serif font-extrabold text-5xl md:text-6xl mb-4 leading-tight tracking-tighter"
+          >
+            PERI-JOURNAL
+          </h1>
+          <p class="text-xl font-medium tracking-wide">
+            Nurture Your Body, Empower Your Mind
+          </p>
+        </header>
+
+        <section class="text-center mb-10 z-10">
+          <h2 class="text-2xl font-serif italic mb-6">
+            Your Journey, Our Guide
+          </h2>
+          <p
+            class="text-base font-sans leading-relaxed opacity-90 mx-auto max-w-xs md:max-w-sm"
+          >
+            This expert Journal is your ally in bearing witness to the
+            often-confusing changes of perimenopause. Track your symptoms, find
+            inner peace, and know that you are beautifully in transition.
+          </p>
+        </section>
+
+        <!-- Stylized Tree Graphic (Inline SVG matching the image aesthetic) -->
+        <div class="flex justify-center mt-8 mb-4 z-10">
+          <svg
+            viewBox="0 0 120 120"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-28 h-28 md:w-36 md:h-36"
+          >
+            <!-- Tree Trunk and Roots -->
+            <path
+              d="M50 115 L60 115 L60 85 C60 70 70 70 70 60 C70 50 60 40 50 40 L50 115 Z"
+              fill="#E9C8C7"
+              opacity="0.8"
+            />
+            <path
+              d="M50 115 L40 115 L40 90 C40 75 50 75 50 65 C50 55 40 45 30 45 L30 115 Z"
+              fill="#E9C8C7"
+              opacity="0.6"
+            />
+
+            <!-- Brain/Canopy (Stylized as a moonlit head) -->
+            <circle
+              cx="60"
+              cy="40"
+              r="38"
+              fill="#E9C8C7"
+              stroke="#574F5A"
+              stroke-width="2"
+            />
+            <path
+              d="M60 2 C75 2 92 10 92 40 C92 70 75 80 60 80 C45 80 28 70 28 40 C28 10 45 2 60 2Z"
+              fill="#574F5A"
+            />
+            <path
+              d="M60 40 C75 40 92 48 92 78 C92 85 75 90 60 90 C45 90 28 85 28 78 C28 48 45 40 60 40Z"
+              fill="#574F5A"
+              opacity="0.2"
+            />
+
+            <!-- Moon on the canopy -->
+            <circle cx="85" cy="18" r="8" fill="#F7F4F0" />
+            <circle cx="88" cy="16" r="8" fill="#574F5A" />
+
+            <!-- Stars/Flares -->
+            <circle cx="40" cy="15" r="3" fill="#F7F4F0" />
+            <rect
+              x="75"
+              y="45"
+              width="6"
+              height="6"
+              fill="#F7F4F0"
+              transform="rotate(45 75 45)"
+            />
+            <circle cx="100" cy="50" r="2" fill="#F7F4F0" />
+            <circle cx="20" cy="60" r="2.5" fill="#F7F4F0" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- RIGHT PANEL: Waiting List Form and Author Info (Light Background) -->
+      <!-- ========================================================================= -->
+      <div
+        class="light-panel bg-panel-light text-text-dark p-8 md:p-12 lg:p-16"
+      >
+        <!-- Decorative Moons/Pattern (Top Right - Subtle) -->
+        <svg
+          class="crescent-moon crescent-top-right transform rotate-180"
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M96 20C96 48.7 73.7 72 46 72C18.3 72 -4 48.7 -4 20C-4 -8.7 18.3 -32 46 -32C73.7 -32 96 -8.7 96 20Z"
+            fill="currentColor"
+          />
+          <path
+            d="M50 4C27.9 4 10 21.9 10 44C10 66.1 27.9 84 50 84C72.1 84 90 66.1 90 44C90 21.9 72.1 4 50 4Z"
+            fill="white"
+            fill-opacity="0.1"
+          />
+        </svg>
+
+        <!-- Decorative Moons/Pattern (Bottom Left) -->
+        <svg
+          class="crescent-moon crescent-bottom-left"
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M96 20C96 48.7 73.7 72 46 72C18.3 72 -4 48.7 -4 20C-4 -8.7 18.3 -32 46 -32C73.7 -32 96 -8.7 96 20Z"
+            fill="currentColor"
+          />
+          <path
+            d="M50 4C27.9 4 10 21.9 10 44C10 66.1 27.9 84 50 84C72.1 84 90 66.1 90 44C90 21.9 72.1 4 50 4Z"
+            fill="white"
+            fill-opacity="0.1"
+          />
+        </svg>
+
+        <section class="text-center z-10">
+          <h2 class="text-3xl font-serif font-bold mb-8 tracking-wider">
+            JOIN THE MOVEMENT
+          </h2>
+
+          <form id="waitlistForm" onsubmit="handleFormSubmit(event)">
+            <div class="mb-4 text-left">
+              <label
+                for="email"
+                class="text-xs font-semibold tracking-wider text-text-dark/70 block mb-1"
+                >EMAIL ADDRESS</label
+              >
+              <input
+                type="email"
+                id="email"
+                required
+                class="w-full p-3 border border-accent-rose/50 rounded-lg focus:ring-1 focus:ring-accent-rose focus:border-accent-rose transition duration-150 bg-white"
+              />
+            </div>
+
+            <div class="mb-4 text-left">
+              <label
+                for="name"
+                class="text-xs font-semibold tracking-wider text-text-dark/70 block mb-1"
+                >NAME</label
+              >
+              <input
+                type="text"
+                id="name"
+                required
+                class="w-full p-3 border border-accent-rose/50 rounded-lg focus:ring-1 focus:ring-accent-rose focus:border-accent-rose transition duration-150 bg-white"
+              />
+            </div>
+
+            <div class="mb-6 text-left">
+              <label
+                for="message-optional"
+                class="text-xs font-semibold tracking-wider text-text-dark/70 block mb-1"
+                >OPTIONAL MESSAGE</label
+              >
+              <input
+                type="text"
+                id="message-optional"
+                class="w-full p-3 border border-accent-rose/50 rounded-lg focus:ring-1 focus:ring-accent-rose focus:border-accent-rose transition duration-150 bg-white"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="w-2/3 py-3 px-6 rounded-full font-bold text-panel-light bg-accent-rose hover:bg-panel-dark transition duration-300 shadow-md transform hover:scale-[1.02]"
+            >
+              STAY INFORMED
+            </button>
+
+            <p id="message" class="text-sm text-center mt-4 text-text-dark/70">
+              We respect your inbox. No spam, ever.
+            </p>
+          </form>
+        </section>
+
+        <!-- Author Info Section -->
+        <section class="text-center mt-12 z-10">
+          <h3
+            class="text-sm uppercase tracking-widest font-bold text-text-dark/80 mb-6"
+          >
+            ABOUT THE AUTHOR
+          </h3>
+
+          <div class="flex flex-col items-center">
+            <!-- Placeholder Author Image -->
+            <img
+              src="https://placehold.co/80x80/E9C8C7/2F2D35?text=DR"
+              alt="Portrait of Dr. Sarah Chen, PhD"
+              onerror="this.src='https://placehold.co/80x80/E9C8C7/2F2D35?text=DR'"
+              class="rounded-full w-20 h-20 object-cover ring-2 ring-accent-rose/80 mb-4 shadow-lg"
+            />
+
+            <p class="text-xl font-serif font-bold text-text-dark">
+              Dr. Sarah Chen, PhD
+            </p>
+            <p class="text-sm font-sans italic text-text-dark/70 mb-4">
+              Researcher & Medical Writer
+            </p>
+
+            <p
+              class="text-sm text-text-dark/70 leading-relaxed max-w-xs mx-auto mb-6"
+            >
+              Tonie is a renowned health writer dedicated to providing
+              accessible, evidence-based tools for modern women navigating
+              life's complex health stages.
+            </p>
+          </div>
+
+          <!-- Social Icons -->
+          <div class="flex space-x-4 justify-center">
+            <!-- LinkedIn -->
+            <a
+              href="#"
+              class="text-text-dark/60 hover:text-accent-rose transition duration-150"
+              aria-label="LinkedIn"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM4 9h4v12H4z"
+                />
+                <circle cx="6" cy="6" r="2" fill="currentColor" />
+              </svg>
+            </a>
+            <!-- Twitter/X -->
+            <a
+              href="#"
+              class="text-text-dark/60 hover:text-accent-rose transition duration-150"
+              aria-label="Twitter/X"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M18.9 4a.89.89 0 00-.77.34 8.78 8.78 0 00-2.3 1.83 10.37 10.37 0 00-2.58 3.5c-.32 1.15-.35 2.53-.18 3.65.17 1.12.54 2.12 1.07 3.03.52.9 1.15 1.7 1.86 2.37.71.67 1.48 1.17 2.29 1.5.81.33 1.63.48 2.45.48h.02c.7 0 1.25-.56 1.25-1.25s-.55-1.25-1.25-1.25c-.37 0-.7-.05-1.01-.15-.46-.14-.88-.38-1.25-.72-.44-.39-.83-.88-1.15-1.46-.32-.58-.55-1.22-.68-1.92-.12-.7-.11-1.45.05-2.18.15-.72.41-1.39.77-2.02.36-.63.79-1.2 1.28-1.72.48-.52 1.01-.98 1.58-1.38.56-.4 1.17-.67 1.8-.81.63-.14 1.3-.11 1.96.1s1.3.49 1.84.99c.55.5 1.02 1.12 1.41 1.84.39.72.69 1.54.89 2.44.2 1.1.2 2.29.0 3.38-.2 1.09-.6 2.14-1.2 3.12-.6 1-1.32 1.84-2.14 2.52-.82.68-1.74 1.19-2.73 1.52-1.01.32-2.06.45-3.1.37-1.04-.08-2.06-.35-3.04-.79-.98-.44-1.88-1.07-2.67-1.87-.79-.8-1.44-1.73-1.93-2.78-.49-1.05-.79-2.2-.88-3.37-.1-1.17-.06-2.33.13-3.48.19-1.15.55-2.28 1.06-3.33.51-1.05 1.19-2.04 2.01-2.93 1.63-1.76 3.64-2.9 5.86-3.41 2.23-.5 4.5-.28 6.57.65.65.29 1.08 1.03.88 1.73z"
+                />
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a
+              href="#"
+              class="text-text-dark/60 hover:text-accent-rose transition duration-150"
+              aria-label="Instagram"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2c2.71 0 3.05.01 4.12.06 1.07.05 1.74.22 2.4.47.66.25 1.2.62 1.74 1.15.54.53.9 1.08 1.15 1.74.25.66.42 1.33.47 2.4.05 1.07.06 1.41.06 4.12s-.01 3.05-.06 4.12c-.05 1.07-.22 1.74-.47 2.4-.25.66-.62 1.2-1.15 1.74-.53.54-1.08.9-1.74 1.15-.66.25-1.33.42-2.4.47-1.07.05-1.41.06-4.12.06s-3.05-.01-4.12-.06c-1.07-.05-1.74-.22-2.4-.47-.66-.25-1.2-.62-1.74-1.15-.54-.53-.9-1.08-1.15-1.74-.25-.66-.42-1.33-.47-2.4-.05-1.07-.06-1.41-.06-4.12s.01-3.05.06-4.12c.05-1.07.22-1.74.47-2.4.25-.66.62-1.2 1.15-1.74.53-.54 1.08-.9 1.74-1.15.66-.25 1.33-.42 2.4-.47C8.95 2.01 9.29 2 12 2zm0 2.22c-2.67 0-3 .01-4.04.06-1.04.05-1.66.21-2.1.37-.44.16-.76.4-.99.63-.23.23-.47.55-.63.99-.16.44-.32 1.06-.37 2.1-.05 1.04-.06 1.37-.06 4.04s.01 3 .06 4.04c.05 1.04.21 1.66.37 2.1.16.44.4.76.63.99.23.23.55.47.99.63.44.16 1.06.32 2.1.37 1.04.05 1.37.06 4.04.06s3-.01 4.04-.06c1.04-.05 1.66-.21 2.1-.37.44-.16.76-.4.99-.63.23-.23.47-.55.63-.99.16-.44.32-1.06.37-2.1.05-1.04.06-1.37.06-4.04s-.01-3-.06-4.04c-.05-1.04-.21-1.66-.37-2.1-.16-.44-.4-.76-.63-.99-.23-.23-.55-.47-.99-.63-.44-.16-1.06-.32-2.1-.37-1.04-.05-1.37-.06-4.04-.06zm0 3.78a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm5.5-7.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
+                />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- JavaScript for Form Submission -->
+    <script>
+      const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const messageElement = document.getElementById("message");
+        const submitButton = form.querySelector('button[type="submit"]');
+
+        // Simple client-side validation
+        const email = document.getElementById("email").value;
+        const name = document.getElementById("name").value;
+        if (!email || !name) {
+          messageElement.textContent =
+            "Email and Name are required to join the waiting list!";
+          messageElement.classList.remove("text-text-dark/70");
+          messageElement.classList.add("text-red-600", "font-bold");
+          return;
+        }
+
+        // Simulate form submission process
+        submitButton.textContent = "Submitting...";
+        submitButton.disabled = true;
+
+        // In a real application, you would send this data to your backend/mailing list API here.
+        console.log(`Submitting email: ${email}, name: ${name}`);
+        await new Promise((resolve) => setTimeout(resolve, 1500)); // Simulate API delay
+
+        // Update UI on success
+        messageElement.textContent =
+          "Welcome! You are now on the list and will get updates soon.";
+        messageElement.classList.remove("text-red-600", "text-text-dark/70");
+        messageElement.classList.add("text-green-600", "font-semibold");
+
+        submitButton.textContent = "SUBSCRIBED!";
+        submitButton.classList.remove("bg-accent-rose");
+        submitButton.classList.add("bg-green-600");
+
+        // Optionally disable the form fields after successful submission
+        form
+          .querySelectorAll("input")
+          .forEach((input) => (input.disabled = true));
+      };
+    </script>
+  </body>
+</html>
